@@ -2,13 +2,13 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Draggable
   - Water
   - UI
   - 
@@ -41,3 +41,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Cards
+    uniqueID: 2949908151
+    locked: 0
+  - name: Creatures
+    uniqueID: 55065425
+    locked: 0
+  - name: AboveEverything
+    uniqueID: 155710541
+    locked: 0
+  m_RenderingLayers:
+  - Default

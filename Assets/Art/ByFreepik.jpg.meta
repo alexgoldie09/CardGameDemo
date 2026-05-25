@@ -160,6 +160,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ByFreepik_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 162
+        width: 1200
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86430f92c9b90450ab4325ab18291a8f
+      internalID: -1121671193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -175,6 +197,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       ByFreepik_0: 3143636935629779763
+      ByFreepik_1: -1121671193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

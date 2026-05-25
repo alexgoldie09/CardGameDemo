@@ -109,7 +109,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -147,7 +147,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -214,12 +214,12 @@ TextureImporter:
       name: sparkle_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 108
-        width: 8
-        height: 8
+        x: 0
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -236,12 +236,12 @@ TextureImporter:
       name: sparkle_1
       rect:
         serializedVersion: 2
-        x: 41
-        y: 106
-        width: 14
-        height: 14
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -258,12 +258,12 @@ TextureImporter:
       name: sparkle_2
       rect:
         serializedVersion: 2
-        x: 71
-        y: 103
-        width: 18
-        height: 18
+        x: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -280,12 +280,12 @@ TextureImporter:
       name: sparkle_3
       rect:
         serializedVersion: 2
-        x: 101
-        y: 101
-        width: 22
-        height: 22
+        x: 96
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -302,12 +302,12 @@ TextureImporter:
       name: sparkle_4
       rect:
         serializedVersion: 2
-        x: 140
-        y: 108
-        width: 8
-        height: 8
+        x: 128
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -324,12 +324,12 @@ TextureImporter:
       name: sparkle_5
       rect:
         serializedVersion: 2
-        x: 169
-        y: 106
-        width: 14
-        height: 14
+        x: 160
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -346,12 +346,12 @@ TextureImporter:
       name: sparkle_6
       rect:
         serializedVersion: 2
-        x: 199
-        y: 103
-        width: 18
-        height: 18
+        x: 192
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -368,12 +368,12 @@ TextureImporter:
       name: sparkle_7
       rect:
         serializedVersion: 2
-        x: 229
-        y: 101
-        width: 22
-        height: 22
+        x: 224
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -390,19 +390,19 @@ TextureImporter:
       name: sparkle_8
       rect:
         serializedVersion: 2
-        x: 3
-        y: 67
-        width: 26
-        height: 26
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 00dd9f91578ea0920800000000000000
+      spriteID: 995823e32d1ee4b6f839e529bc719eea
       internalID: 2957431694966775040
       vertices: []
       indices: 
@@ -412,19 +412,19 @@ TextureImporter:
       name: sparkle_9
       rect:
         serializedVersion: 2
-        x: 35
-        y: 67
-        width: 26
-        height: 26
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5959ec5dce3aeb050800000000000000
+      spriteID: ac30255cab5b043e79f18940e11f3ea2
       internalID: 5818268006203954581
       vertices: []
       indices: 
@@ -434,19 +434,19 @@ TextureImporter:
       name: sparkle_10
       rect:
         serializedVersion: 2
-        x: 67
-        y: 67
-        width: 26
-        height: 26
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7481d341e8c106090800000000000000
+      spriteID: 09a6049cb399b473596872660e5b9df9
       internalID: -8043397537933223865
       vertices: []
       indices: 
@@ -456,19 +456,19 @@ TextureImporter:
       name: sparkle_11
       rect:
         serializedVersion: 2
-        x: 98
-        y: 66
-        width: 28
-        height: 28
+        x: 96
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 78cf60500003805b0800000000000000
+      spriteID: 49c2c572337af4b76a69bbf4c5989b85
       internalID: -5402014976388432761
       vertices: []
       indices: 
@@ -478,19 +478,19 @@ TextureImporter:
       name: sparkle_12
       rect:
         serializedVersion: 2
-        x: 131
-        y: 67
-        width: 26
-        height: 26
+        x: 128
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 64a77edddbf425b60800000000000000
+      spriteID: b5beb64ca5b344ea9b23feb31e9dc1b1
       internalID: 7733331187038911046
       vertices: []
       indices: 
@@ -500,19 +500,19 @@ TextureImporter:
       name: sparkle_13
       rect:
         serializedVersion: 2
-        x: 163
-        y: 67
-        width: 26
-        height: 26
+        x: 160
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7bf07ff4ab1ee97c0800000000000000
+      spriteID: aa0c31f12dc4c44b9a7093140821c4e6
       internalID: -4062561623519850569
       vertices: []
       indices: 
@@ -522,19 +522,19 @@ TextureImporter:
       name: sparkle_14
       rect:
         serializedVersion: 2
-        x: 195
-        y: 67
-        width: 26
-        height: 26
+        x: 192
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f5a72bf9879c23f60800000000000000
+      spriteID: e21606303c1724deaa4b89f95c24cf24
       internalID: 8012688206958066271
       vertices: []
       indices: 
@@ -544,19 +544,19 @@ TextureImporter:
       name: sparkle_15
       rect:
         serializedVersion: 2
-        x: 226
-        y: 66
-        width: 28
-        height: 28
+        x: 224
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 44d9ac083f4a32200800000000000000
+      spriteID: d362d675ea82149eba0d7c7119bdcb03
       internalID: 154148178005499204
       vertices: []
       indices: 
@@ -567,18 +567,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 31
-        width: 256
-        height: 34
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5309d483387a02240800000000000000
+      spriteID: 7b94bd08e466542969187356975b2479
       internalID: 4764992587785146421
       vertices: []
       indices: 
@@ -588,19 +588,19 @@ TextureImporter:
       name: sparkle_17
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 28
-        height: 28
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f057240394a2a5070800000000000000
+      spriteID: 0f5dd50d68c054331a9dcf1dcbadbcd0
       internalID: 8095829773982528783
       vertices: []
       indices: 
@@ -610,19 +610,19 @@ TextureImporter:
       name: sparkle_18
       rect:
         serializedVersion: 2
-        x: 37
-        y: 5
-        width: 22
-        height: 22
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 20520dce87f2080d0800000000000000
+      spriteID: 665cf2efe70d74278abb29dca4a4b861
       internalID: -3422683520385932030
       vertices: []
       indices: 
@@ -632,19 +632,19 @@ TextureImporter:
       name: sparkle_19
       rect:
         serializedVersion: 2
-        x: 72
-        y: 8
-        width: 16
-        height: 16
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9f0fdb1e0490116d0800000000000000
+      spriteID: 1c0bdab13ea9e478ca6861e0cbf81090
       internalID: -3021623700719013639
       vertices: []
       indices: 
@@ -654,19 +654,19 @@ TextureImporter:
       name: sparkle_20
       rect:
         serializedVersion: 2
-        x: 107
-        y: 11
-        width: 10
-        height: 10
+        x: 128
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0f918b5e443483680800000000000000
+      spriteID: db0c5b34a521249a3945eeeb49c215db
       internalID: -8775189910740526608
       vertices: []
       indices: 
@@ -676,19 +676,19 @@ TextureImporter:
       name: sparkle_21
       rect:
         serializedVersion: 2
-        x: 130
-        y: 2
-        width: 28
-        height: 28
+        x: 160
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7ec6d2b569ccc40d0800000000000000
+      spriteID: 5e992a3e954204eee9642c0e35733d66
       internalID: -3437147469443666713
       vertices: []
       indices: 
@@ -698,19 +698,19 @@ TextureImporter:
       name: sparkle_22
       rect:
         serializedVersion: 2
-        x: 165
-        y: 5
-        width: 22
-        height: 22
+        x: 192
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8419fb64c2e4ed6c0800000000000000
+      spriteID: 7b73cc218bee84bf789e31ee848fc8f9
       internalID: -4116767057297567416
       vertices: []
       indices: 
@@ -720,19 +720,19 @@ TextureImporter:
       name: sparkle_23
       rect:
         serializedVersion: 2
-        x: 200
-        y: 8
-        width: 16
-        height: 16
+        x: 224
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2b8449e64e2201390800000000000000
+      spriteID: a3d224e565bf34e6c99906f9989f0036
       internalID: -7849735786003674958
       vertices: []
       indices: 
@@ -742,20 +742,174 @@ TextureImporter:
       name: sparkle_24
       rect:
         serializedVersion: 2
-        x: 235
-        y: 11
-        width: 10
-        height: 10
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 54ae91c65021845b0800000000000000
+      spriteID: aa9ee53c76cc54fd99f4e09e0cda749e
       internalID: -5384033540023653819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sparkle_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d59d87e46904ba6847740f8c92b66e
+      internalID: 1326513441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sparkle_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d4bc96dfcfe41faa1bd825b0d7c209
+      internalID: -1432547474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sparkle_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c0f149a16c384e12a2fa0fad4f28df4
+      internalID: -2028195509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sparkle_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae8f4a583d9da46b5adadf3ac387baf9
+      internalID: 1222892356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sparkle_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e423270dab0f8401b8a4d08a8dbdfd7c
+      internalID: 648129587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sparkle_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b31fc55b6a54d0e9c82f86cb1a250e
+      internalID: -1728912514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sparkle_31
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd776942df264f7588bc67a6a2b72a0
+      internalID: 1711201569
       vertices: []
       indices: 
       edges: []
@@ -764,7 +918,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c9122d7c880434baca571d2eebecb975
     internalID: 0
     vertices: []
     indices: 
@@ -772,7 +926,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       sparkle_0: -2059823583270753353
       sparkle_1: -5886241038748846175
@@ -792,7 +948,14 @@ TextureImporter:
       sparkle_22: -4116767057297567416
       sparkle_23: -7849735786003674958
       sparkle_24: -5384033540023653819
+      sparkle_25: 1326513441
+      sparkle_26: -1432547474
+      sparkle_27: -2028195509
+      sparkle_28: 1222892356
+      sparkle_29: 648129587
       sparkle_3: -7924158313636417959
+      sparkle_30: -1728912514
+      sparkle_31: 1711201569
       sparkle_4: -5270785090687209720
       sparkle_5: -8924476270872323085
       sparkle_6: -6406156947652966137

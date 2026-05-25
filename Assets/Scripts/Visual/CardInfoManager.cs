@@ -43,6 +43,7 @@ public class CardInfoManager : MonoBehaviour
     // Is this card being played now
     private bool canBePlayedNow = false;
 
+    #region Accessors
     public bool CanBePlayedNow
     {
         get => canBePlayedNow;
@@ -52,6 +53,17 @@ public class CardInfoManager : MonoBehaviour
             CardFaceGlowImage.enabled = value;
         }
     }
+    
+    // Expose the asset so DragManager can read it from the dragged card
+    public CardAsset CardAsset => cardAsset;
+
+    // Allow the preview panel to be populated from outside
+    public void LoadCard(CardAsset asset)
+    {
+        cardAsset = asset;
+        InitCard();
+    }
+    #endregion
     
     // Initialise card info
     private void Awake()
