@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917561878a8602640ab159ede231f37f, type: 3}
+  m_Name: Rogue
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterAsset
+  Class: 0
+  ClassName: Rogue
+  MaxHealth: 30
+  HeroPowerName: Rain of Arrows
+  HeroPowerIconImage: {fileID: -415446080585258355, guid: 55825c3f8c1e14503a13117c85f19072, type: 3}
+  HeroPowerBGImage: {fileID: 0}
+  HeroPowerBGTint: {r: 0.28235295, g: 0, b: 0.090063125, a: 1}
+  AvatarImage: {fileID: 21300000, guid: 525f414a995504da589491074b101e98, type: 3}
+  AvatarBGImage: {fileID: 21300000, guid: d4f74c34fd5ca4096a66e40a4d5a7d1f, type: 3}
+  AvatarBGTint: {r: 0.08235294, g: 0, b: 0.28235295, a: 1}
+  ClassCardTint: {r: 0.3206264, g: 0.5754717, b: 0.21987364, a: 1}
+  ClassRibbonsTint: {r: 0.7075472, g: 0.677471, b: 0.19023673, a: 1}

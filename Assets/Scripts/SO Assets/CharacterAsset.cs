@@ -3,8 +3,8 @@ using System.Collections;
 
 public enum CharClass
 {
-	Elf, 
-	Monk, 
+	Rogue, 
+	Mage, 
 	Warrior
 }
 

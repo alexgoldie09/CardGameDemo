@@ -22,16 +22,20 @@ public class CreatureInfoManager : MonoBehaviour
     [SerializeField, Tooltip("Card glow object on this creature.")]
     public Image CardGlowImage;
     
-    // Is this card being played now
-    private bool canBePlayedNow = false;
+    private bool canAttackNow = false;
 
     #region Accessors
-    public bool CanBePlayedNow
+    public bool CanAttackNow
     {
-        get => canBePlayedNow;
+        get
+        {
+            return canAttackNow;
+        }
+
         set
         {
-            canBePlayedNow = value;
+            canAttackNow = value;
+
             CardGlowImage.enabled = value;
         }
     }
@@ -76,6 +80,15 @@ public class CreatureInfoManager : MonoBehaviour
             // Preview GameObject will have CardInfoManager as well, but PreviewManager should be null there
             PreviewManager.cardAsset = cardAsset;
             PreviewManager.InitCreature();
+        }
+    }
+    
+    public void TakeDamage(int amount, int healthAfter)
+    {
+        if (amount > 0)
+        {
+            // TODO DamageEffect.CreateDamageEffect(transform.position, amount);
+            HealthText.text = healthAfter.ToString();
         }
     }
 }

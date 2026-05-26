@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e206fc57f453a42b932de9e94caabf, type: 3}
   m_Name: Black Necromancer
   m_EditorClassIdentifier: Assembly-CSharp::CardAsset
-  CharacterAsset: {fileID: 0}
+  CharacterAsset: {fileID: 11400000, guid: dc263c240d0ef47f99e5439efd9748f8, type: 2}
   Description: You would tread carefully around death, mortal!
-  CardImage: {fileID: 21300000, guid: 832cbe9263ce44094aa306c314228cce, type: 3}
-  ManaCost: 7
+  CardImage: {fileID: 1903318293289623666, guid: 832cbe9263ce44094aa306c314228cce, type: 3}
+  ManaCost: 4
   IsSpell: 0
-  MaxHealth: 12
-  Attack: 8
+  MaxHealth: 10
+  Attack: 2
   AttacksForOneTurn: 1
   Charge: 0
   CreatureScriptName: 
-  SpecialCreatureAmount: 8
+  SpecialCreatureAmount: 2
   SpellScriptName: 
   SpecialSpellAmount: 0
   Targets: 0

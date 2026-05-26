@@ -300,6 +300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 700447783502079921}
   - component: {fileID: 3574010655535922709}
+  - component: {fileID: 3289312068920810337}
   m_Layer: 3
   m_Name: PlayerPortrait
   m_TagString: Untagged
@@ -345,6 +346,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.106958, y: 3.4950275, z: 0.01}
   m_Center: {x: -0.00000023841858, y: 0.03141451, z: 0}
+--- !u!114 &3289312068920810337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761822935507602155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac5f13ceee9941258f2bd8fd13d6c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPortraitVisual
+  charAsset: {fileID: 11400000, guid: dc263c240d0ef47f99e5439efd9748f8, type: 2}
+  HealthText: {fileID: 4990587816195044446}
+  HeroPowerIconImage: {fileID: 3938181668543783757}
+  HeroPowerBackgroundImage: {fileID: 2633871311260498533}
+  PortraitImage: {fileID: 7399717590506228650}
+  PortraitBackgroundImage: {fileID: 1691113412785463003}
 --- !u!1 &4381617548808262164
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d4f74c34fd5ca4096a66e40a4d5a7d1f, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -802,3 +821,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3745701908748737979, guid: 8cd479f76d4114ed2b913f105b0f0309, type: 3}
   m_PrefabInstance: {fileID: 2367834513779069381}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2633871311260498533 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 311127642909715360, guid: 8cd479f76d4114ed2b913f105b0f0309, type: 3}
+  m_PrefabInstance: {fileID: 2367834513779069381}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &3938181668543783757 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1619896932161286792, guid: 8cd479f76d4114ed2b913f105b0f0309, type: 3}
+  m_PrefabInstance: {fileID: 2367834513779069381}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image

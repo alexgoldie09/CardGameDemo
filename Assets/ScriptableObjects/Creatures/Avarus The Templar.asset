@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e206fc57f453a42b932de9e94caabf, type: 3}
+  m_Name: Avarus The Templar
+  m_EditorClassIdentifier: Assembly-CSharp::CardAsset
+  CharacterAsset: {fileID: 0}
+  Description: You will not stand in my way while I dispatch holy justice!
+  CardImage: {fileID: -3353698123413505517, guid: 8822181f458f84c909cafabc8f0b4f4b, type: 3}
+  ManaCost: 6
+  IsSpell: 0
+  MaxHealth: 12
+  Attack: 6
+  AttacksForOneTurn: 1
+  Charge: 1
+  CreatureScriptName: 
+  SpecialCreatureAmount: 6
+  SpellScriptName: 
+  SpecialSpellAmount: 0
+  Targets: 0
