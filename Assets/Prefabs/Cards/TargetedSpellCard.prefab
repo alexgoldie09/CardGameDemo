@@ -663,6 +663,7 @@ GameObject:
   - component: {fileID: 7531317817709878637}
   - component: {fileID: 6341271873816437459}
   - component: {fileID: 9093910359125976977}
+  - component: {fileID: 926580028187405365}
   m_Layer: 0
   m_Name: TargetedSpellCard
   m_TagString: Untagged
@@ -732,6 +733,18 @@ MonoBehaviour:
   CardBack: {fileID: 7828464974306763078}
   targetFacePoint: {fileID: 6671247240106966918}
   col: {fileID: 4580769346770127567}
+--- !u!114 &926580028187405365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961578627076413047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a71563466b0849fbaab6a0f3cc8ace6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WhereIsTheCardOrCreature
 --- !u!1 &983746133827883530
 GameObject:
   m_ObjectHideFlags: 0
@@ -3328,7 +3341,7 @@ Transform:
   m_GameObject: {fileID: 7814521479664096171}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.02}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3534,7 +3547,7 @@ GameObject:
   - component: {fileID: 3006347152620402678}
   - component: {fileID: 4580769346770127567}
   - component: {fileID: 4383412737867815478}
-  - component: {fileID: 6150303841213557382}
+  - component: {fileID: 7910504072712379595}
   m_Layer: 3
   m_Name: Target
   m_TagString: Untagged
@@ -3656,7 +3669,7 @@ MonoBehaviour:
   TargetScale: 2.5
   previewGameObject: {fileID: 584770092568929746}
   ActivateInAwake: 1
---- !u!114 &6150303841213557382
+--- !u!114 &7910504072712379595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3665,9 +3678,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8447876739018997497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d9e71af6e2f46ad9c2726e624e4b50, type: 3}
+  m_Script: {fileID: 11500000, guid: af319df7dc0b34dbaa9ae95e67bfa42a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggingActionOnTarget
+  m_EditorClassIdentifier: Assembly-CSharp::DragSpellOnTarget
+  targets: 4
 --- !u!1 &8805969000881068081
 GameObject:
   m_ObjectHideFlags: 0

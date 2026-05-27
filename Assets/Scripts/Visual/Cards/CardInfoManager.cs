@@ -55,7 +55,7 @@ public class CardInfoManager : MonoBehaviour
     }
     
     // Expose the asset so DragManager can read it from the dragged card
-    public CardAsset CardAsset => cardAsset;
+    public CardAsset CardAsset { get => cardAsset; set => cardAsset = value; }
 
     // Allow the preview panel to be populated from outside
     public void LoadCard(CardAsset asset)

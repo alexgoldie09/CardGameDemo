@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 700447783502079921}
   - component: {fileID: 3574010655535922709}
   - component: {fileID: 3289312068920810337}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PlayerPortrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPortraitVisual
   charAsset: {fileID: 11400000, guid: dc263c240d0ef47f99e5439efd9748f8, type: 2}
-  HealthText: {fileID: 4990587816195044446}
+  healthText: {fileID: 4990587816195044446}
   HeroPowerIconImage: {fileID: 3938181668543783757}
   HeroPowerBackgroundImage: {fileID: 2633871311260498533}
   PortraitImage: {fileID: 7399717590506228650}
@@ -797,6 +797,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3745701908748737979, guid: 8cd479f76d4114ed2b913f105b0f0309, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5741621038892974571, guid: 8cd479f76d4114ed2b913f105b0f0309, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6105638491255342378, guid: 8cd479f76d4114ed2b913f105b0f0309, type: 3}

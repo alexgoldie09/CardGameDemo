@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - LowCreature
+  - TopCreature
+  - LowCard
+  - TopCard
+  - LowPlayer
+  - TopPlayer
   layers:
   - Default
   - TransparentFX
@@ -11,8 +17,8 @@ TagManager:
   - Draggable
   - Water
   - UI
-  - 
-  - 
+  - Table
+  - Click
   - 
   - 
   - 

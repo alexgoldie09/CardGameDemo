@@ -4,6 +4,25 @@ using UnityEngine;
 public abstract class DraggingActions : MonoBehaviour
 {
     /// <summary>
+    /// The player who owns this card or creature, determined by the tag of the GameObject.
+    /// </summary>
+    protected virtual Player PlayerOwner
+    {
+        get
+        {
+
+            if (tag.Contains("Low"))
+                return GlobalSettings.Instance.LowPlayer;
+            
+            if (tag.Contains("Top"))
+                return GlobalSettings.Instance.TopPlayer;
+            
+            Debug.LogError("Untagged Card or creature " + transform.parent.name);
+            return null;
+        }
+    }
+    
+    /// <summary>
     /// Called once at the start of the drag.
     /// Use this to set up any necessary variables or states for the dragging action.
     /// </summary>
@@ -26,7 +45,7 @@ public abstract class DraggingActions : MonoBehaviour
     /// <summary>
     /// Indicates whether the object can be dragged.
     /// </summary>
-    public virtual bool CanDrag => true;
+    public virtual bool CanDrag => GlobalSettings.Instance.CanControlThisPlayer(PlayerOwner);
 
     /// <summary>
     /// Determines whether the drag action was successful or not.

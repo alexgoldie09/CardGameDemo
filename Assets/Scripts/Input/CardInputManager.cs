@@ -7,6 +7,10 @@ public class CardInputManager : MonoBehaviour
     [Header("Settings")]
     [SerializeField, Tooltip("The physics layer that is used to check against for dragging.")]
     private LayerMask draggableLayer;
+    [SerializeField, Tooltip("The physics layer used to detect table colliders.")]
+    private LayerMask tableLayer;
+    [SerializeField, Tooltip("The physics layer used to detect clickable objects such as the hero power button.")]
+    private LayerMask clickableLayer;
     [SerializeField, Tooltip("If true, the dragged object will maintain its initial displacement " +
                              "from the pointer. If false, the dragged object will snap to the pointer position.")]
     private bool usePointerDisplacement = true;
@@ -39,6 +43,7 @@ public class CardInputManager : MonoBehaviour
     private GameObject currentDragTarget;
     private DraggingActions currentDragActions;
     private GameObject currentHoverTarget;
+    private TableVisual[] tables;
 
     /// <summary>
     /// The displacement between the pointer and the dragged object when the drag starts.
@@ -78,6 +83,11 @@ public class CardInputManager : MonoBehaviour
             pointAction.AddBinding("<Mouse>/position");
         }
     }
+    
+    private void Start()
+    {
+        tables = FindObjectsByType<TableVisual>(FindObjectsSortMode.None);
+    }
 
     private void OnEnable()
     {
@@ -103,6 +113,13 @@ public class CardInputManager : MonoBehaviour
     {
         Vector2 screenPos = pointAction.ReadValue<Vector2>();
         Ray ray = Camera.main.ScreenPointToRay(screenPos);
+        
+        // Check clickables first — if we hit one, handle it and stop
+        if (Physics.Raycast(ray, out RaycastHit clickHit, Mathf.Infinity, clickableLayer))
+        {
+            clickHit.collider.GetComponent<IClickable>()?.OnClick();
+            return;
+        }
 
         if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, draggableLayer)) return;
 
@@ -154,12 +171,15 @@ public class CardInputManager : MonoBehaviour
 
         if (currentDragActions != null)
         {
-            // Re-enable hover only once the drag action signals it is fully complete
-            currentDragActions.OnEndDrag(() => HoverPreview.PreviewsAllowed = true);
+            currentDragActions.OnEndDrag(() =>
+            {
+                ResetTableHover();
+                HoverPreview.PreviewsAllowed = true;
+            });
         }
         else
         {
-            // No drag actions means no animation, safe to re-enable immediately
+            ResetTableHover();
             HoverPreview.PreviewsAllowed = true;
         }
 
@@ -178,6 +198,7 @@ public class CardInputManager : MonoBehaviour
                 currentDragTarget.transform.position.z
             );
             currentDragActions?.OnDraggingInUpdate();
+            CheckTableHover();
         }
         else
         {
@@ -185,6 +206,7 @@ public class CardInputManager : MonoBehaviour
         }
     }
 
+    #region Hover Methods
     /// <summary>
     /// Raycasts each frame to detect hover enter and exit on draggable cards.
     /// Fires OnCardHoverEnter and OnCardHoverExit events when the hovered card changes.
@@ -208,6 +230,40 @@ public class CardInputManager : MonoBehaviour
         if (currentHoverTarget != null)
             OnCardHoverEnter?.Invoke(currentHoverTarget);
     }
+    
+    /// <summary>
+    /// Uses RaycastAll to detect which table the pointer is over during a drag,
+    /// since a dragged card may occlude the table collider.
+    /// Sets CursorOverThisTable on each TableVisual accordingly.
+    /// </summary>
+    private void CheckTableHover()
+    {
+        ResetTableHover();
+
+        Vector2 screenPos = pointAction.ReadValue<Vector2>();
+        RaycastHit[] hits = Physics.RaycastAll(
+            Camera.main.ScreenPointToRay(screenPos),
+            Mathf.Infinity,
+            tableLayer
+        );
+
+        foreach (RaycastHit hit in hits)
+        {
+            TableVisual table = hit.collider.GetComponent<TableVisual>();
+            if (table != null)
+                table.CursorOverThisTable = true;
+        }
+    }
+
+    /// <summary>
+    /// Clears the cursor over state on all cached tables.
+    /// </summary>
+    private void ResetTableHover()
+    {
+        foreach (TableVisual table in tables)
+            table.CursorOverThisTable = false;
+    }
+    #endregion
 
     #region Helper Methods
     private Vector3 ScreenToWorld(Vector2 screenPos)

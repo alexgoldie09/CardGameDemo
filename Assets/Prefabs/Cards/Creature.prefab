@@ -538,6 +538,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2916321665015987152}
   - component: {fileID: 7306486363627507671}
+  - component: {fileID: 859757917443395655}
+  - component: {fileID: 5271126412733298642}
   m_Layer: 0
   m_Name: Creature
   m_TagString: Untagged
@@ -581,6 +583,30 @@ MonoBehaviour:
   AttackText: {fileID: 1619019322393176600}
   CardGraphicImage: {fileID: 7770742589467226954}
   CardGlowImage: {fileID: 1933884269748625662}
+--- !u!114 &859757917443395655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2764593264794926751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf7bddeb5605480083e88be199d8229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CreatureAttackVisual
+--- !u!114 &5271126412733298642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2764593264794926751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a71563466b0849fbaab6a0f3cc8ace6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WhereIsTheCardOrCreature
 --- !u!1 &3862067399800673609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,7 +1092,7 @@ GameObject:
   - component: {fileID: 6533194285145853302}
   - component: {fileID: 2510745842277727403}
   - component: {fileID: 930181701700077314}
-  - component: {fileID: 5700445396505871438}
+  - component: {fileID: 8389978288632241170}
   m_Layer: 3
   m_Name: Target
   m_TagString: Untagged
@@ -1188,7 +1214,7 @@ MonoBehaviour:
   TargetScale: 2
   previewGameObject: {fileID: 4423939115817693526}
   ActivateInAwake: 1
---- !u!114 &5700445396505871438
+--- !u!114 &8389978288632241170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1197,9 +1223,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6046724394114232959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d9e71af6e2f46ad9c2726e624e4b50, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af97f71677f84a2db7191b5b9047e3f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggingActionOnTarget
+  m_EditorClassIdentifier: Assembly-CSharp::DragCreatureAttack
 --- !u!1 &6119842985506328852
 GameObject:
   m_ObjectHideFlags: 0

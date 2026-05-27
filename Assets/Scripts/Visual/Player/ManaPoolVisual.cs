@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 [ExecuteInEditMode]
@@ -15,10 +16,12 @@ public class ManaPoolVisual : MonoBehaviour
     private int TestTotalCrystalsThisTurn;
     
     [Header("Crystals Properties")]
+    [FormerlySerializedAs("Crystals")]
     [SerializeField, Tooltip("Number of crystals to show.")]
-    private Image[] Crystals;
+    private Image[] crystals;
+    [FormerlySerializedAs("ProgressText")] 
     [SerializeField, Tooltip("Text object to show the mana progress (e.g. 3/10).")]
-    public TextMeshProUGUI ProgressText;
+    public TextMeshProUGUI progressText;
 
     private int _totalCrystals;
     private int _availableCrystals;
@@ -36,26 +39,26 @@ public class ManaPoolVisual : MonoBehaviour
         {
             //Debug.Log("Changed total mana to: " + value);
 
-            if (value > Crystals.Length)
-                _totalCrystals = Crystals.Length;
+            if (value > crystals.Length)
+                _totalCrystals = crystals.Length;
             else if (value < 0)
                 _totalCrystals = 0;
             else
                 _totalCrystals = value;
 
-            for (int i = 0; i < Crystals.Length; i++)
+            for (int i = 0; i < crystals.Length; i++)
             {
                 if (i < _totalCrystals)
                 {
-                    if (Crystals[i].color == Color.clear)
-                        Crystals[i].color = Color.gray;
+                    if (crystals[i].color == Color.clear)
+                        crystals[i].color = Color.gray;
                 }
                 else
-                    Crystals[i].color = Color.clear;
+                    crystals[i].color = Color.clear;
             }
 
             // update the text
-            ProgressText.text = $"{_availableCrystals.ToString()}/{_totalCrystals.ToString()}";
+            progressText.text = $"{_availableCrystals.ToString()}/{_totalCrystals.ToString()}";
         }
     }
 
@@ -82,13 +85,13 @@ public class ManaPoolVisual : MonoBehaviour
             for (int i = 0; i < _totalCrystals; i++)
             {
                 if (i < _availableCrystals)
-                    Crystals[i].color = Color.white;
+                    crystals[i].color = Color.white;
                 else
-                    Crystals[i].color = Color.gray;
+                    crystals[i].color = Color.gray;
             }
 
             // update the text
-            ProgressText.text = $"{_availableCrystals.ToString()}/{_totalCrystals.ToString()}";
+            progressText.text = $"{_availableCrystals.ToString()}/{_totalCrystals.ToString()}";
 
         }
     }
@@ -97,10 +100,15 @@ public class ManaPoolVisual : MonoBehaviour
     {
         if (!Application.isEditor || Application.isPlaying) return;
         
-        if (Crystals == null || Crystals.Length == 0 || ProgressText == null)  return;
+        if (crystals == null || crystals.Length == 0 || progressText == null)  return;
         
         TotalCrystals = TestTotalCrystalsThisTurn;
         AvailableCrystals = TestFullCrystals;
     }
+
+    #region Accessors
+    public Image[] Crystals => crystals;
+    public TextMeshProUGUI ProgressText => progressText;
+    #endregion
 	
 }

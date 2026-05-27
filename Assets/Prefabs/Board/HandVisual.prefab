@@ -133,6 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8328280466128940031}
+  - component: {fileID: 7392219240545543768}
   m_Layer: 0
   m_Name: HandVisual
   m_TagString: Untagged
@@ -156,6 +157,25 @@ Transform:
   - {fileID: 1714524935970642189}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7392219240545543768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2667165412485089075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7536cffc2320044739dd8be564d267b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandVisual
+  owner: 0
+  takeCardsOpenly: 1
+  slots: {fileID: 4809315406509147063}
+  drawPreviewSpot: {fileID: 0}
+  deckTransform: {fileID: 0}
+  otherCardDrawSourceTransform: {fileID: 0}
+  playPreviewSpot: {fileID: 0}
 --- !u!1 &3030549099249152898
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e27e5ab723443c4b2edb418dbeea17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SameDistanceChildren
-  Children:
+  children:
   - {fileID: 1736062105413829831}
   - {fileID: 4812098248483038782}
   - {fileID: 4517614996208383641}

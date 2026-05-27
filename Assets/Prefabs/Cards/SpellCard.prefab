@@ -663,9 +663,10 @@ GameObject:
   - component: {fileID: 7531317817709878637}
   - component: {fileID: 6341271873816437459}
   - component: {fileID: 8146466654194631451}
-  - component: {fileID: -3477061756517644197}
   - component: {fileID: 9093910359125976977}
   - component: {fileID: 8552674071001922775}
+  - component: {fileID: 2105387161018223822}
+  - component: {fileID: -8242809370320720645}
   m_Layer: 3
   m_Name: SpellCard
   m_TagString: Untagged
@@ -735,18 +736,6 @@ MonoBehaviour:
   TargetScale: 2.5
   previewGameObject: {fileID: 584770092568929746}
   ActivateInAwake: 1
---- !u!114 &-3477061756517644197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961578627076413047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37475437a554847f2b062ccb25a561cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggingActionReturn
 --- !u!114 &9093910359125976977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,6 +773,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.7, y: 2.9900296, z: 0.01}
   m_Center: {x: 0, y: -0.0022495985, z: 0}
+--- !u!114 &2105387161018223822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961578627076413047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 779e1e79aba564eb59920f0225cc4d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DragSpellNoTarget
+--- !u!114 &-8242809370320720645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961578627076413047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a71563466b0849fbaab6a0f3cc8ace6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WhereIsTheCardOrCreature
 --- !u!1 &1169985084590420641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,7 +3151,7 @@ Transform:
   m_GameObject: {fileID: 7814521479664096171}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.02}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

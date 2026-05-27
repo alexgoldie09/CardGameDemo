@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.Serialization;
 
 public class PlayerPortraitVisual : MonoBehaviour 
 {
@@ -13,8 +14,9 @@ public class PlayerPortraitVisual : MonoBehaviour
     
     [Header("Text Component References")]
     //public Text NameText;
+    [FormerlySerializedAs("HealthText")]
     [SerializeField, Tooltip("The text component that will display the health text.")]
-    private TextMeshProUGUI HealthText;
+    private TextMeshProUGUI healthText;
     
     [Header("Image References")]
     [SerializeField, Tooltip("The image that will display the hero power icon image.")]
@@ -43,7 +45,7 @@ public class PlayerPortraitVisual : MonoBehaviour
 	private void ApplyLookFromAsset()
     {
         // Health text update
-        HealthText.text = charAsset.MaxHealth.ToString();
+        healthText.text = charAsset.MaxHealth.ToString();
         
         // Hero power icon image and background image update
         HeroPowerIconImage.sprite = charAsset.HeroPowerIconImage;
@@ -64,16 +66,27 @@ public class PlayerPortraitVisual : MonoBehaviour
     {
         if (amount > 0)
         {
-            // TODO DamageEffect.CreateDamageEffect(transform.position, amount);
-            HealthText.text = healthAfter.ToString();
+            DamageEffect.CreateDamageEffect(transform.position, amount);
+            healthText.text = healthAfter.ToString();
         }
     }
 
-    // public void Explode()
-    // {
-    //     Instantiate(GlobalSettings.Instance.ExplosionPrefab, transform.position, Quaternion.identity);
-    //     Sequence s = DOTween.Sequence();
-    //     s.PrependInterval(2f);
-    //     s.OnComplete(() => GlobalSettings.Instance.GameOverPanel.SetActive(true));
-    // }
+    public void Explode()
+    {
+        Instantiate(GlobalSettings.Instance.ExplosionPrefab, transform.position, Quaternion.identity);
+        Sequence s = DOTween.Sequence();
+        s.PrependInterval(2f);
+        s.OnComplete(() => GlobalSettings.Instance.GameOverPanel.SetActive(true));
+    }
+    
+    public TextMeshProUGUI HealthText => healthText;
+    public CharacterAsset CharAsset 
+    { 
+        get => charAsset;
+        set
+        {
+            charAsset = value;
+            ApplyLookFromAsset();
+        }
+    }
 }

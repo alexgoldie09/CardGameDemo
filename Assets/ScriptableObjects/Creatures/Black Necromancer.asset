@@ -15,7 +15,7 @@ MonoBehaviour:
   CharacterAsset: {fileID: 11400000, guid: dc263c240d0ef47f99e5439efd9748f8, type: 2}
   Description: You would tread carefully around death, mortal!
   CardImage: {fileID: 1903318293289623666, guid: 832cbe9263ce44094aa306c314228cce, type: 3}
-  ManaCost: 4
+  ManaCost: 0
   IsSpell: 0
   MaxHealth: 10
   Attack: 2

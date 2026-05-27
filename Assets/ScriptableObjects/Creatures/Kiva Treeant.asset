@@ -15,7 +15,7 @@ MonoBehaviour:
   CharacterAsset: {fileID: 11400000, guid: dc263c240d0ef47f99e5439efd9748f8, type: 2}
   Description: Me tree, you die when I swing!
   CardImage: {fileID: -998015944851935435, guid: 5eba997f054f442e08f16a6ab3eea31f, type: 3}
-  ManaCost: 10
+  ManaCost: 0
   IsSpell: 0
   MaxHealth: 14
   Attack: 4

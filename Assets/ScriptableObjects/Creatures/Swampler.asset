@@ -15,7 +15,7 @@ MonoBehaviour:
   CharacterAsset: {fileID: 0}
   Description: Grggglllrrrrr..
   CardImage: {fileID: 941291017969341520, guid: 79b112057a4ee42299c37b9ae13e6960, type: 3}
-  ManaCost: 1
+  ManaCost: 0
   IsSpell: 0
   MaxHealth: 2
   Attack: 1
