@@ -15,7 +15,7 @@ MonoBehaviour:
   CharacterAsset: {fileID: 0}
   Description: You will not stand in my way while I dispatch holy justice!
   CardImage: {fileID: -3353698123413505517, guid: 8822181f458f84c909cafabc8f0b4f4b, type: 3}
-  ManaCost: 0
+  ManaCost: 4
   IsSpell: 0
   MaxHealth: 12
   Attack: 6

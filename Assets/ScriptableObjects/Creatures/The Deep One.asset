@@ -15,7 +15,7 @@ MonoBehaviour:
   CharacterAsset: {fileID: 0}
   Description: From deepest darkest depths, I shall rise!
   CardImage: {fileID: -774476512181017199, guid: 96741876586514d6f91f63978d4b9415, type: 3}
-  ManaCost: 0
+  ManaCost: 2
   IsSpell: 0
   MaxHealth: 6
   Attack: 2

@@ -15,7 +15,7 @@ MonoBehaviour:
   CharacterAsset: {fileID: 11400000, guid: e8a98736a4e724895a3c8074ce57a814, type: 2}
   Description: Watch as I weave you into my spells, you fool.
   CardImage: {fileID: -2611018762325444292, guid: d9797313dd90a459e922cc817ca33668, type: 3}
-  ManaCost: 0
+  ManaCost: 3
   IsSpell: 0
   MaxHealth: 8
   Attack: 3

@@ -51,11 +51,10 @@ public class WhereIsTheCardOrCreature : MonoBehaviour {
             _state = value;
             _hover.ThisPreviewEnabled = _state switch
             {
-                VisualStates.LowHand => true,
+                VisualStates.LowHand or VisualStates.TopHand => true,
                 VisualStates.LowTable or VisualStates.TopTable => true,
                 VisualStates.Transition => false,
                 VisualStates.Dragging => false,
-                VisualStates.TopHand => false,
                 _ => _hover.ThisPreviewEnabled
             };
         }

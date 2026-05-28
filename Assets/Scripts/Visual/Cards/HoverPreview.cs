@@ -132,7 +132,10 @@ public class HoverPreview : MonoBehaviour
         // 5. Tween to target position and target scale
         previewGameObject.transform.localPosition = Vector3.zero;
         previewGameObject.transform.localScale = Vector3.one;
-        previewGameObject.transform.DOLocalMove(TargetPosition, 1f).SetEase(Ease.OutQuint);
+        Vector3 target = gameObject.tag.Contains("Top")
+            ? new Vector3(TargetPosition.x, -TargetPosition.y, TargetPosition.z)
+            : TargetPosition;
+        previewGameObject.transform.DOLocalMove(target, 1f).SetEase(Ease.OutQuint);
         previewGameObject.transform.DOScale(TargetScale, 1f).SetEase(Ease.OutQuint);
     }
 

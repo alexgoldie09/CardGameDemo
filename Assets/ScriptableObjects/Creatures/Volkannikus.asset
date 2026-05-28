@@ -15,7 +15,7 @@ MonoBehaviour:
   CharacterAsset: {fileID: 11400000, guid: e8a98736a4e724895a3c8074ce57a814, type: 2}
   Description: My flames will consume all!
   CardImage: {fileID: 7748267652351012046, guid: 6249646d871e2420eb21e3a1c8456608, type: 3}
-  ManaCost: 0
+  ManaCost: 8
   IsSpell: 0
   MaxHealth: 5
   Attack: 12
