@@ -100,7 +100,7 @@ public class MessageManager : MonoBehaviour
         MessagePanel.SetActive(false);
         
         _activeShowMessageCoroutine = null;
-        // TODO Command.CommandExecutionComplete();
+        Command.CommandExecutionComplete();
     }
 
 

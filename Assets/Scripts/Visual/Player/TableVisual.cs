@@ -100,6 +100,8 @@ public class TableVisual : MonoBehaviour
     {
         GameObject creatureToRemove = IDHolder.GetGameObjectWithID(idToRemove);
         creaturesOnTable.Remove(creatureToRemove);
+        // foreach (Transform t in creatureToRemove.GetComponentsInChildren<Transform>())
+        //     DOTween.Kill(t);
         Destroy(creatureToRemove);
 
         ShiftSlotsGameObjectAccordingToNumberOfCreatures();
@@ -126,7 +128,10 @@ public class TableVisual : MonoBehaviour
     private void PlaceCreaturesOnNewSlots()
     {
         foreach (GameObject g in creaturesOnTable)
+        {
+            //DOTween.Kill(g.transform);
             g.transform.DOLocalMoveX(slots.Children[creaturesOnTable.IndexOf(g)].transform.localPosition.x, 0.3f);
+        }
     }
     #endregion
 }

@@ -51,7 +51,7 @@ public class WhereIsTheCardOrCreature : MonoBehaviour {
             _state = value;
             _hover.ThisPreviewEnabled = _state switch
             {
-                VisualStates.LowHand or VisualStates.TopHand => true,
+                VisualStates.LowHand or VisualStates.TopHand => !OwnerIsAI(),
                 VisualStates.LowTable or VisualStates.TopTable => true,
                 VisualStates.Transition => false,
                 VisualStates.Dragging => false,
@@ -61,6 +61,14 @@ public class WhereIsTheCardOrCreature : MonoBehaviour {
     }
     #endregion
 
+    private bool OwnerIsAI()
+    {
+        Player owner = gameObject.tag.Contains("Top")
+            ? GlobalSettings.Instance.TopPlayer
+            : GlobalSettings.Instance.LowPlayer;
+        return owner != null && owner.GetComponent<AITurnMaker>() != null;
+    }
+    
     /// <summary>
     /// Initializes references to the HoverPreview component and the Canvas component on this object.
     /// </summary>

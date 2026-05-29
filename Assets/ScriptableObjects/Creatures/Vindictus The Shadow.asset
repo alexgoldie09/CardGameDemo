@@ -13,16 +13,22 @@ MonoBehaviour:
   m_Name: Vindictus The Shadow
   m_EditorClassIdentifier: Assembly-CSharp::CardAsset
   CharacterAsset: {fileID: 11400000, guid: e8a98736a4e724895a3c8074ce57a814, type: 2}
-  Description: Watch as I weave you into my spells, you fool.
+  Description: 'Watch as I weave you into my spells, you fool.
+
+    Windfury: Can
+    attack twice per turn.
+
+    BitePlayer: Does 2 damage to the other player at
+    the end of each turn.'
   CardImage: {fileID: -2611018762325444292, guid: d9797313dd90a459e922cc817ca33668, type: 3}
   ManaCost: 3
   IsSpell: 0
-  MaxHealth: 8
-  Attack: 3
+  MaxHealth: 6
+  Attack: 2
   AttacksForOneTurn: 2
   Charge: 0
-  CreatureScriptName: 
-  SpecialCreatureAmount: 3
+  CreatureScriptName: BiteOwner
+  SpecialCreatureAmount: 2
   SpellScriptName: 
   SpecialSpellAmount: 0
   Targets: 0

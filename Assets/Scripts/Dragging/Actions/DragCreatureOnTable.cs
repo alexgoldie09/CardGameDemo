@@ -45,9 +45,13 @@ public class DragCreatureOnTable : DraggingActions
             _whereIsCard.SetHandSortingOrder();
             _whereIsCard.VisualState = _tempState;
 
-            Vector3 oldCardPos = PlayerOwner.PArea.HandVisual.Slots.Children[_savedHandSlot].transform.localPosition;
-            transform.DOLocalMove(oldCardPos, 1f)
-                .OnComplete(() => onComplete?.Invoke());
+            if (transform != null)
+            {
+                Vector3 oldCardPos =
+                    PlayerOwner.PArea.HandVisual.Slots.Children[_savedHandSlot].transform.localPosition;
+                transform.DOLocalMove(oldCardPos, 1f)
+                    .OnComplete(() => onComplete?.Invoke());
+            }
         }
     }
 

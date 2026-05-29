@@ -126,6 +126,11 @@ public class DragCreatureAttack : DraggingActions
         if (targetID == GlobalSettings.Instance.LowPlayer.ID ||
             targetID == GlobalSettings.Instance.TopPlayer.ID)
         {
+            Player targetPlayer = targetID == GlobalSettings.Instance.LowPlayer.ID
+                ? GlobalSettings.Instance.LowPlayer
+                : GlobalSettings.Instance.TopPlayer;
+            if (targetPlayer.Table.CreaturesOnTable.Count > 0)
+                return false;
             CreatureLogic.CreaturesCreatedThisGame[attackerID].GoFace();
             return true;
         }

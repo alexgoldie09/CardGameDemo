@@ -18,11 +18,11 @@ MonoBehaviour:
   ManaCost: 3
   IsSpell: 0
   MaxHealth: 10
-  Attack: 2
+  Attack: 6
   AttacksForOneTurn: 1
   Charge: 0
   CreatureScriptName: 
-  SpecialCreatureAmount: 2
+  SpecialCreatureAmount: 5
   SpellScriptName: 
   SpecialSpellAmount: 0
   Targets: 0

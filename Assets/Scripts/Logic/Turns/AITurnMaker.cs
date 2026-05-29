@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 //this class will take all decisions for AI. 
 
@@ -70,14 +71,24 @@ public class AITurnMaker: TurnMaker
                 if (c.CA.MaxHealth == 0)
                 {
                     // code to play a spell from hand
-                    // TODO: depending on the targeting options, select a random target.
+                    // depending on the targeting options, select a random target.
                     if (c.CA.Targets == TargetingOptions.NoTarget)
                     {
                         p.PlayASpellFromHand(c, null);
                         InsertDelay(1.5f);
                         //Debug.Log("Card: " + c.ca.name + " can be played");
                         return true;
-                    }                        
+                    }
+                    else
+                    {
+                        ICharacter target = SelectRandomTarget(c.CA.Targets);
+                        if (target != null)
+                        {
+                            p.PlayASpellFromHand(c, target);
+                            InsertDelay(1.5f);
+                            return true;
+                        }
+                    }
                 }
                 else
                 {
@@ -150,6 +161,44 @@ public class AITurnMaker: TurnMaker
     private void InsertDelay(float delay)
     {
         new DelayCommand(delay).AddToQueue();
+    }
+    
+    /// <summary>
+    /// Returns a random valid ICharacter target for the given targeting option, or null if none exist.
+    /// </summary>
+    private ICharacter SelectRandomTarget(TargetingOptions targeting)
+    {
+        List<ICharacter> valid = new List<ICharacter>();
+
+        switch (targeting)
+        {
+            case TargetingOptions.EnemyCreatures:
+                foreach (var cl in p.OtherPlayer.Table.CreaturesOnTable) valid.Add(cl);
+                break;
+            case TargetingOptions.YourCreatures:
+                foreach (var cl in p.Table.CreaturesOnTable) valid.Add(cl);
+                break;
+            case TargetingOptions.AllCreatures:
+                foreach (var cl in p.Table.CreaturesOnTable) valid.Add(cl);
+                foreach (var cl in p.OtherPlayer.Table.CreaturesOnTable) valid.Add(cl);
+                break;
+            case TargetingOptions.EnemyCharacters:
+                foreach (var cl in p.OtherPlayer.Table.CreaturesOnTable) valid.Add(cl);
+                valid.Add(p.OtherPlayer);
+                break;
+            case TargetingOptions.YourCharacters:
+                foreach (var cl in p.Table.CreaturesOnTable) valid.Add(cl);
+                valid.Add(p);
+                break;
+            case TargetingOptions.AllCharacters:
+                foreach (var cl in p.Table.CreaturesOnTable) valid.Add(cl);
+                foreach (var cl in p.OtherPlayer.Table.CreaturesOnTable) valid.Add(cl);
+                valid.Add(p);
+                valid.Add(p.OtherPlayer);
+                break;
+        }
+
+        return valid.Count > 0 ? valid[Random.Range(0, valid.Count)] : null;
     }
 
 }

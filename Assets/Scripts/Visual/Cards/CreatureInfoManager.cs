@@ -87,8 +87,16 @@ public class CreatureInfoManager : MonoBehaviour
     {
         if (amount > 0)
         {
-            // TODO DamageEffect.CreateDamageEffect(transform.position, amount);
+            DamageEffect.CreateDamageEffect(transform.position, amount);
             HealthText.text = healthAfter.ToString();
+            UpdateHealthDisplay(healthAfter);
         }
+    }
+
+    public void UpdateHealthDisplay(int healthAfter)
+    {
+        HealthText.text = healthAfter.ToString();
+        if (PreviewManager != null)
+            PreviewManager.HealthText.text = healthAfter.ToString();
     }
 }

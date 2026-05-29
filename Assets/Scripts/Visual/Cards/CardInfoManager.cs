@@ -85,10 +85,10 @@ public class CardInfoManager : MonoBehaviour
         }
         else
         {
-            //CardBodyImage.color = GlobalSettings.Instance.CardBodyStandardColor;
+            CardBodyImage.color = GlobalSettings.Instance.CardBodyStandardColor;
             CardFaceFrameImage.color = Color.white;
-            //CardTopRibbonImage.color = GlobalSettings.Instance.CardRibbonsStandardColor;
-            //CardLowRibbonImage.color = GlobalSettings.Instance.CardRibbonsStandardColor;
+            CardTopRibbonImage.color = GlobalSettings.Instance.CardRibbonsStandardColor;
+            CardBottomRibbonImage.color = GlobalSettings.Instance.CardRibbonsStandardColor;
         }
         // 2) add card name
         NameText.text = cardAsset.name;

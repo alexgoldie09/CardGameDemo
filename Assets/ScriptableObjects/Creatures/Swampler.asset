@@ -17,7 +17,7 @@ MonoBehaviour:
   CardImage: {fileID: 941291017969341520, guid: 79b112057a4ee42299c37b9ae13e6960, type: 3}
   ManaCost: 1
   IsSpell: 0
-  MaxHealth: 2
+  MaxHealth: 3
   Attack: 1
   AttacksForOneTurn: 1
   Charge: 0

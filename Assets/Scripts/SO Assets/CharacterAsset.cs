@@ -17,6 +17,7 @@ public class CharacterAsset : ScriptableObject
 	public int MaxHealth = 30;
 	
 	[Header("Character Power Properties")]
+	public int HeroPowerManaCost = 2;
 	public string HeroPowerName;
 	public Sprite HeroPowerIconImage;
 	public Sprite HeroPowerBGImage;

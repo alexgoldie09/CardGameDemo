@@ -15,7 +15,7 @@ MonoBehaviour:
   Class: 0
   ClassName: Rogue
   MaxHealth: 30
-  HeroPowerName: Rain of Arrows
+  HeroPowerName: HeroPower2Face
   HeroPowerIconImage: {fileID: -415446080585258355, guid: 55825c3f8c1e14503a13117c85f19072, type: 3}
   HeroPowerBGImage: {fileID: 0}
   HeroPowerBGTint: {r: 0.28235295, g: 0, b: 0.090063125, a: 1}

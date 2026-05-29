@@ -17,6 +17,8 @@ public class PlayerPortraitVisual : MonoBehaviour
     [FormerlySerializedAs("HealthText")]
     [SerializeField, Tooltip("The text component that will display the health text.")]
     private TextMeshProUGUI healthText;
+    [SerializeField, Tooltip("The text component that will display the mana cost text.")]
+    private TextMeshProUGUI manaCostText;
     
     [Header("Image References")]
     [SerializeField, Tooltip("The image that will display the hero power icon image.")]
@@ -46,9 +48,11 @@ public class PlayerPortraitVisual : MonoBehaviour
     {
         // Health text update
         healthText.text = charAsset.MaxHealth.ToString();
+        manaCostText.text = charAsset.HeroPowerManaCost.ToString();
         
         // Hero power icon image and background image update
         HeroPowerIconImage.sprite = charAsset.HeroPowerIconImage;
+        
         if (charAsset.HeroPowerBGImage != null)
             HeroPowerBackgroundImage.sprite = charAsset.HeroPowerBGImage;
         else

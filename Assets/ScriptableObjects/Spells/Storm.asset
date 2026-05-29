@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41e206fc57f453a42b932de9e94caabf, type: 3}
-  m_Name: Fireball
+  m_Name: Storm
   m_EditorClassIdentifier: Assembly-CSharp::CardAsset
   CharacterAsset: {fileID: 0}
-  Description: Deal 4 damage to a target creature
-  CardImage: {fileID: 21300000, guid: ead916c1f2e264a9ba2b95199c27e359, type: 3}
-  ManaCost: 2
+  Description: Deal 3 damage to all enemy characters
+  CardImage: {fileID: 21300000, guid: db359355a5eef4aff88dab0cc466b01a, type: 3}
+  ManaCost: 4
   IsSpell: 1
   MaxHealth: 0
   Attack: 0
@@ -23,6 +23,6 @@ MonoBehaviour:
   Charge: 0
   CreatureScriptName: 
   SpecialCreatureAmount: 0
-  SpellScriptName: DealDamageToTarget
-  SpecialSpellAmount: 4
+  SpellScriptName: DamageAllOpponentCreatures
+  SpecialSpellAmount: 3
   Targets: 2

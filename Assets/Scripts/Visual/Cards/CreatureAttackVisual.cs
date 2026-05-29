@@ -49,7 +49,7 @@ public class CreatureAttackVisual : MonoBehaviour
                     target.GetComponent<PlayerPortraitVisual>().HealthText.text = targetHealthAfter.ToString();
                 }
                 else
-                    target.GetComponent<CreatureInfoManager>().HealthText.text = targetHealthAfter.ToString();
+                    target.GetComponent<CreatureInfoManager>().UpdateHealthDisplay(targetHealthAfter);
 
                 _w.SetTableSortingOrder();
                 _w.VisualState = tempState;

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class PlayACreatureCommand : Command
 {
@@ -34,6 +35,8 @@ public class PlayACreatureCommand : Command
         HandVisual playerHand = p.PArea.HandVisual;
         GameObject card = IDHolder.GetGameObjectWithID(cl.ID);
         playerHand.RemoveCard(card);
+        // foreach (Transform t in card.GetComponentsInChildren<Transform>())
+        //     DOTween.Kill(t);
         GameObject.Destroy(card);
         // enable Hover Previews Back
         HoverPreview.PreviewsAllowed = true;

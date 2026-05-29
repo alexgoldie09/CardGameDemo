@@ -13,16 +13,19 @@ MonoBehaviour:
   m_Name: The Deep One
   m_EditorClassIdentifier: Assembly-CSharp::CardAsset
   CharacterAsset: {fileID: 0}
-  Description: From deepest darkest depths, I shall rise!
+  Description: 'From deepest darkest depths, I shall rise!
+
+    Charge: Can be used
+    on the turn it was played.'
   CardImage: {fileID: -774476512181017199, guid: 96741876586514d6f91f63978d4b9415, type: 3}
   ManaCost: 2
   IsSpell: 0
   MaxHealth: 6
-  Attack: 2
+  Attack: 1
   AttacksForOneTurn: 1
   Charge: 1
   CreatureScriptName: 
-  SpecialCreatureAmount: 2
+  SpecialCreatureAmount: 1
   SpellScriptName: 
   SpecialSpellAmount: 0
   Targets: 0

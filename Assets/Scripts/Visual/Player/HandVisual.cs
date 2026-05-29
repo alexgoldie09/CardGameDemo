@@ -114,6 +114,8 @@ public class HandVisual : MonoBehaviour
     {
         foreach (var g in CardsInHand)
         {
+            //DOTween.Kill(g.transform);
+            
             // tween this card to a new Slot
             g.transform.DOLocalMoveX(slots.Children[CardsInHand.IndexOf(g)].transform.localPosition.x, 0.3f);
 
@@ -263,7 +265,8 @@ public class HandVisual : MonoBehaviour
         RemoveCard(CardVisual);
 
         CardVisual.transform.SetParent(null);
-
+        // foreach (Transform t in CardVisual.GetComponentsInChildren<Transform>())
+        //     DOTween.Kill(t);
         Sequence s = DOTween.Sequence();
         s.Append(CardVisual.transform.DOMove(PlayPreviewSpot.position, 1f));
         s.Insert(0f, CardVisual.transform.DORotate(Vector3.zero, 1f));

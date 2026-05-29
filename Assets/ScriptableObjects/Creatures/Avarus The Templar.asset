@@ -13,16 +13,19 @@ MonoBehaviour:
   m_Name: Avarus The Templar
   m_EditorClassIdentifier: Assembly-CSharp::CardAsset
   CharacterAsset: {fileID: 0}
-  Description: You will not stand in my way while I dispatch holy justice!
+  Description: 'You will not stand in my way while I dispatch holy justice!
+
+    Charge:
+    Can be used on the turn it was played.'
   CardImage: {fileID: -3353698123413505517, guid: 8822181f458f84c909cafabc8f0b4f4b, type: 3}
   ManaCost: 4
   IsSpell: 0
   MaxHealth: 12
-  Attack: 6
+  Attack: 3
   AttacksForOneTurn: 1
   Charge: 1
   CreatureScriptName: 
-  SpecialCreatureAmount: 6
+  SpecialCreatureAmount: 3
   SpellScriptName: 
   SpecialSpellAmount: 0
   Targets: 0

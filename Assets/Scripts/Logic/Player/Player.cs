@@ -178,11 +178,11 @@ public class Player : MonoBehaviour, ICharacter
    }
 
     // FOR TESTING ONLY
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.D))
-            DrawACard();
-    }
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.D))
+    //         DrawACard();
+    // }
 
     /// <summary>
     /// A method to draw a card from the player's deck into their hand.
@@ -294,7 +294,7 @@ public class Player : MonoBehaviour, ICharacter
     /// </summary>
     public void UseHeroPower()
     {
-        ManaLeft -= 2;
+        ManaLeft -= charAsset.HeroPowerManaCost;
         usedHeroPowerThisTurn = true;
         HeroPowerEffect.ActivateEffect();
     }
@@ -335,7 +335,8 @@ public class Player : MonoBehaviour, ICharacter
                 g.GetComponent<CreatureInfoManager>().CanAttackNow = (crl.AttacksLeftThisTurn > 0) && !removeAllHighlights;
         }
 
-        PArea.HeroPower.Highlighted = (!usedHeroPowerThisTurn) && (ManaLeft > 1) && !removeAllHighlights;
+        PArea.HeroPower.Highlighted = (!usedHeroPowerThisTurn) && (ManaLeft >= charAsset.HeroPowerManaCost) && !removeAllHighlights;
+        
     }
     #endregion
 

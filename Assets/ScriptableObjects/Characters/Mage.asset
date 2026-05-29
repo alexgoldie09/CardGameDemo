@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterAsset
   Class: 1
   ClassName: Mage
-  MaxHealth: 25
-  HeroPowerName: Magic Blitz
+  MaxHealth: 30
+  HeroPowerManaCost: 4
+  HeroPowerName: HeroPowerMageBlitz
   HeroPowerIconImage: {fileID: 8979405933268748967, guid: 9d056cf6a07af4458913f7325ab6ec88, type: 3}
   HeroPowerBGImage: {fileID: 0}
   HeroPowerBGTint: {r: 0.08235294, g: 0, b: 0.28235295, a: 1}

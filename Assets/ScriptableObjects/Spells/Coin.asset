@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Coin
   m_EditorClassIdentifier: Assembly-CSharp::CardAsset
   CharacterAsset: {fileID: 0}
-  Description: 'Coin card
-
-'
+  Description: Give mana
   CardImage: {fileID: 7675826601332790545, guid: e5756343a143d4eba85c100ad1d34efc, type: 3}
   ManaCost: 0
   IsSpell: 1
@@ -25,6 +23,6 @@ MonoBehaviour:
   Charge: 0
   CreatureScriptName: 
   SpecialCreatureAmount: 0
-  SpellScriptName: 
+  SpellScriptName: GiveManaBonus
   SpecialSpellAmount: 1
   Targets: 0
