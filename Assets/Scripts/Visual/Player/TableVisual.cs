@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -100,12 +101,35 @@ public class TableVisual : MonoBehaviour
     {
         GameObject creatureToRemove = IDHolder.GetGameObjectWithID(idToRemove);
         creaturesOnTable.Remove(creatureToRemove);
-        // foreach (Transform t in creatureToRemove.GetComponentsInChildren<Transform>())
-        //     DOTween.Kill(t);
+    
+        bool wasAttacking = CreatureAttackVisual.AttackAnimationInProgress;
+        Debug.Log($"[RemoveCreature] Destroying ID:{idToRemove} wasAttacking:{wasAttacking}");
+    
+        DOTween.Kill(creatureToRemove.transform, false);
+        foreach (Transform t in creatureToRemove.GetComponentsInChildren<Transform>())
+            DOTween.Kill(t, false);
+    
         Destroy(creatureToRemove);
 
         ShiftSlotsGameObjectAccordingToNumberOfCreatures();
         PlaceCreaturesOnNewSlots();
+    
+        if (wasAttacking)
+        {
+            CreatureAttackVisual.AttackAnimationInProgress = false;
+            StartCoroutine(DelayedCommandComplete());
+        }
+        else
+        {
+            Command.CommandExecutionComplete();
+        }
+    }
+
+    private IEnumerator DelayedCommandComplete()
+    {
+        Debug.Log("[RemoveCreature] DelayedCommandComplete started");
+        yield return new WaitForSeconds(1f);
+        Debug.Log("[RemoveCreature] DelayedCommandComplete firing CommandExecutionComplete");
         Command.CommandExecutionComplete();
     }
 

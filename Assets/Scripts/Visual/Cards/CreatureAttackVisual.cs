@@ -6,6 +6,8 @@ public class CreatureAttackVisual : MonoBehaviour
 {
     private CreatureInfoManager _manager;
     private WhereIsTheCardOrCreature _w;
+    
+    public static bool AttackAnimationInProgress = false;
 
     /// <summary>
     /// Gets the creature info manager and where is the card or creature component of this creature.
@@ -27,38 +29,51 @@ public class CreatureAttackVisual : MonoBehaviour
     /// <param name="targetHealthAfter"></param>
     public void AttackTarget(int targetUniqueID, int damageTakenByTarget, int damageTakenByAttacker, int attackerHealthAfter, int targetHealthAfter)
     {
-        Debug.Log(targetUniqueID);
+        AttackAnimationInProgress = true;
+    
         _manager.CanAttackNow = false;
         GameObject target = IDHolder.GetGameObjectWithID(targetUniqueID);
 
-        // bring this creature to front sorting-wise.
         _w.BringToFront();
-        VisualStates tempState = _w.VisualState;
         _w.VisualState = VisualStates.Transition;
 
-        transform.DOMove(target.transform.position, 0.5f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.InCubic).OnComplete(() =>
+        if (damageTakenByTarget > 0)
+            DamageEffect.CreateDamageEffect(
+                target != null ? target.transform.position : transform.position,
+                damageTakenByTarget);
+
+        if (damageTakenByAttacker > 0)
+            DamageEffect.CreateDamageEffect(transform.position, damageTakenByAttacker);
+
+        if (target != null)
+        {
+            if (targetUniqueID == GlobalSettings.Instance.LowPlayer.ID ||
+                targetUniqueID == GlobalSettings.Instance.TopPlayer.ID)
+                target.GetComponent<PlayerPortraitVisual>().HealthText.text = targetHealthAfter.ToString();
+            else
+                target.GetComponent<CreatureInfoManager>().UpdateHealthDisplay(targetHealthAfter);
+        }
+
+        transform.DOMove(target.transform.position, 0.5f)
+            .SetLoops(2, LoopType.Yoyo)
+            .SetEase(Ease.InCubic)
+            .OnComplete(() =>
             {
-                if(damageTakenByTarget>0)
-                    DamageEffect.CreateDamageEffect(target.transform.position, damageTakenByTarget);
-                if(damageTakenByAttacker>0)
-                    DamageEffect.CreateDamageEffect(transform.position, damageTakenByAttacker);
-                
-                if (targetUniqueID == GlobalSettings.Instance.LowPlayer.ID || targetUniqueID == GlobalSettings.Instance.TopPlayer.ID)
+                AttackAnimationInProgress = false;
+
+                if (this != null && _manager != null)
                 {
-                    // target is a player
-                    target.GetComponent<PlayerPortraitVisual>().HealthText.text = targetHealthAfter.ToString();
+                    _w.SetTableSortingOrder();
+                    // Restore to correct table state directly instead of using tempState
+                    _w.VisualState = gameObject.tag.Contains("Low") 
+                        ? VisualStates.LowTable 
+                        : VisualStates.TopTable;
+                    _manager.HealthText.text = attackerHealthAfter.ToString();
                 }
-                else
-                    target.GetComponent<CreatureInfoManager>().UpdateHealthDisplay(targetHealthAfter);
 
-                _w.SetTableSortingOrder();
-                _w.VisualState = tempState;
-
-                _manager.HealthText.text = attackerHealthAfter.ToString();
                 Sequence s = DOTween.Sequence();
                 s.AppendInterval(1f);
                 s.OnComplete(Command.CommandExecutionComplete);
-                //Command.CommandExecutionComplete();
             });
     }
         

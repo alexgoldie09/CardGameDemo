@@ -98,6 +98,9 @@ public class HoverPreview : MonoBehaviour
     private void HandleHoverEnter(GameObject card)
     {
         if (card != gameObject) return;
+        
+        //Debug.Log($"[HoverPreview] HandleHoverEnter - PreviewsAllowed:{PreviewsAllowed} ThisPreviewEnabled:{ThisPreviewEnabled}");
+
         if (PreviewsAllowed && ThisPreviewEnabled)
             PreviewThisObject();
     }

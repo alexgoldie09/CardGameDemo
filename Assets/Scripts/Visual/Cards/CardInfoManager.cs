@@ -7,6 +7,7 @@ public class CardInfoManager : MonoBehaviour
     [Header("Card Properties")]
     [SerializeField, Tooltip("Card asset that we want to display on this card. It should be assigned in the inspector.")]
     private CardAsset cardAsset;
+
     [SerializeField, Tooltip("Card image that we want to display on this card.")]
     public CardInfoManager PreviewManager;
     

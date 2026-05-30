@@ -3,17 +3,16 @@ using System.Collections;
 
 public class CreatureAttackCommand : Command 
 {
-    // position of creature on enemy`s table that will be attacked
-    // if enemyindex == -1 , attack an enemy character 
     private int TargetUniqueID;
     private int AttackerUniqueID;
     private int AttackerHealthAfter;
     private int TargetHealthAfter;
     private int DamageTakenByAttacker;
     private int DamageTakenByTarget;
+    private System.Action _applyDamage;
 
     /// <summary>
-    /// Constructor for a command that initiates a creature attack.
+    /// Constructor for creature attack
     /// </summary>
     /// <param name="targetID"></param>
     /// <param name="attackerID"></param>
@@ -21,7 +20,10 @@ public class CreatureAttackCommand : Command
     /// <param name="damageTakenByTarget"></param>
     /// <param name="attackerHealthAfter"></param>
     /// <param name="targetHealthAfter"></param>
-    public CreatureAttackCommand(int targetID, int attackerID, int damageTakenByAttacker, int damageTakenByTarget, int attackerHealthAfter, int targetHealthAfter)
+    /// <param name="applyDamage"></param>
+    public CreatureAttackCommand(int targetID, int attackerID, int damageTakenByAttacker, 
+        int damageTakenByTarget, int attackerHealthAfter, int targetHealthAfter, 
+        System.Action applyDamage = null)
     {
         this.TargetUniqueID = targetID;
         this.AttackerUniqueID = attackerID;
@@ -29,17 +31,41 @@ public class CreatureAttackCommand : Command
         this.TargetHealthAfter = targetHealthAfter;
         this.DamageTakenByTarget = damageTakenByTarget;
         this.DamageTakenByAttacker = damageTakenByAttacker;
+        this._applyDamage = applyDamage;
     }
 
     /// <summary>
-    /// Animates the attack of the creature to the target and updates health text of
-    /// both attacker and target and creates damage effect if needed.
+    /// Starts the creature attack command execution. This is where the damage is applied and the attack animation is triggered.
+    /// Damage application happens here in StartCommandExecution, so that CreatureDieCommand always gets enqueued after this command is already running.
+    /// This ensures that the attack animation plays even if the attack kills the attacker or the target.
     /// </summary>
     public override void StartCommandExecution()
     {
-        GameObject Attacker = IDHolder.GetGameObjectWithID(AttackerUniqueID);
+        Debug.Log($"[CreatureAttackCommand] StartCommandExecution called. AttackerID:{AttackerUniqueID} TargetID:{TargetUniqueID}");
+        
+        GameObject attacker = IDHolder.GetGameObjectWithID(AttackerUniqueID);
+        
+        if (attacker == null)
+        {
+            Debug.LogError($"[CreatureAttackCommand] Attacker ID:{AttackerUniqueID} not found, skipping.");
+            CommandExecutionComplete();
+            return;
+        }
+        
+        var attackVisual = attacker.GetComponent<CreatureAttackVisual>();
+        
+        if (attackVisual == null)
+        {
+            Debug.LogError($"[CreatureAttackCommand] No CreatureAttackVisual on attacker, skipping.");
+            CommandExecutionComplete();
+            return;
+        }
 
-        //Debug.Log(TargetUniqueID);
-        Attacker.GetComponent<CreatureAttackVisual>().AttackTarget(TargetUniqueID, DamageTakenByTarget, DamageTakenByAttacker, AttackerHealthAfter, TargetHealthAfter);
+        // Apply health changes here — Die() calls happen now, inside StartCommandExecution,
+        // so CreatureDieCommand always gets enqueued after this command is already running
+        _applyDamage?.Invoke();
+        
+        attackVisual.AttackTarget(TargetUniqueID, DamageTakenByTarget, DamageTakenByAttacker, 
+            AttackerHealthAfter, TargetHealthAfter);
     }
 }

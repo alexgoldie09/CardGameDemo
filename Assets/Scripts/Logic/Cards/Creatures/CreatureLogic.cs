@@ -126,31 +126,48 @@ public class CreatureLogic: ICharacter
     }
 
     /// <summary>
+    /// Handles attacking another creature with this creature.
+    /// </summary>
+    /// <param name="target"></param>
+    public void AttackCreature(CreatureLogic target)
+    {
+        AttacksLeftThisTurn--;
+    
+        int targetHealthAfter = target.Health - Attack;
+        int attackerHealthAfter = Health - target.Attack;
+    
+        new CreatureAttackCommand(
+            target.ID, 
+            uniqueCreatureID,
+            target.Attack,    
+            Attack,           
+            attackerHealthAfter, 
+            targetHealthAfter,
+            () =>
+            {
+                target.Health -= Attack;
+                Health -= target.Attack;
+            }
+        ).AddToQueue();
+    }
+
+    /// <summary>
     /// Handles attacking the opponent's face with this creature.
     /// </summary>
     public void GoFace()
     {
         AttacksLeftThisTurn--;
         int targetHealthAfter = owner.OtherPlayer.Health - Attack;
-        new CreatureAttackCommand(owner.OtherPlayer.ID, uniqueCreatureID,
-            0, Attack, Health, targetHealthAfter).AddToQueue();
-        owner.OtherPlayer.Health -= Attack;
-    }
 
-    /// <summary>
-    /// Handles attacking another creature with this creature.
-    /// </summary>
-    /// <param name="target"></param>
-    public void AttackCreature (CreatureLogic target)
-    {
-        AttacksLeftThisTurn--;
-        // calculate the values so that the creature does not fire the DIE command before the Attack command is sent
-        int targetHealthAfter = target.Health - Attack;
-        int attackerHealthAfter = Health - target.Attack;
-        new CreatureAttackCommand(target.ID, uniqueCreatureID, target.Attack, Attack, attackerHealthAfter, targetHealthAfter).AddToQueue();
-
-        target.Health -= Attack;
-        Health -= target.Attack;
+        new CreatureAttackCommand(
+            owner.OtherPlayer.ID, 
+            uniqueCreatureID,
+            0, 
+            Attack, 
+            Health,           
+            targetHealthAfter,
+            () => owner.OtherPlayer.Health -= Attack
+        ).AddToQueue();
     }
 
     /// <summary>

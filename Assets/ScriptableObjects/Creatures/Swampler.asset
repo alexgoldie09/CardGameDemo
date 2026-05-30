@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Swampler
   m_EditorClassIdentifier: Assembly-CSharp::CardAsset
   CharacterAsset: {fileID: 0}
-  Description: Grggglllrrrrr..
+  Description: 
   CardImage: {fileID: 941291017969341520, guid: 79b112057a4ee42299c37b9ae13e6960, type: 3}
   ManaCost: 1
   IsSpell: 0
-  MaxHealth: 3
+  MaxHealth: 4
   Attack: 1
   AttacksForOneTurn: 1
   Charge: 0

@@ -89,11 +89,11 @@ public class DamageEffect : MonoBehaviour
     
     public static void CreateDamageEffect(Vector3 position, int amount)
     {
+        //Debug.Log($"[DamageEffect] Creating effect at:{position} amount:{amount}");
         if (amount == 0)
             return;
-        // Instantiate a DamageEffect from prefab
         GameObject newDamageEffect = Instantiate(GlobalSettings.Instance.DamageEffectPrefab, position, Quaternion.identity);
-        
+        //Debug.Log($"[DamageEffect] Instantiated: {newDamageEffect != null}");
         // Get DamageEffect component in this new game object
         DamageEffect de = newDamageEffect.GetComponent<DamageEffect>();
         // Change the amount text to reflect the amount of damage dealt

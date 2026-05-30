@@ -173,6 +173,8 @@ public class CardInputManager : MonoBehaviour
         {
             currentDragActions.OnEndDrag(() =>
             {
+                // Debug.Log("[CardInputManager] onComplete callback fired, resetting hover");
+
                 ResetTableHover();
                 HoverPreview.PreviewsAllowed = true;
             });

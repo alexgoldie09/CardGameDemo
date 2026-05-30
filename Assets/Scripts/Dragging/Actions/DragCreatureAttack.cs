@@ -42,17 +42,15 @@ public class DragCreatureAttack : DraggingActions
         if (target != null)
             targetValid = TryAttack(target);
 
-        if (!targetValid)
-        {
-            _whereIsThisCreature.VisualState = tag.Contains("Low")
-                ? VisualStates.LowTable
-                : VisualStates.TopTable;
-            _whereIsThisCreature.SetTableSortingOrder();
-        }
+        // Reset visual state regardless of whether attack succeeded or not
+        _whereIsThisCreature.VisualState = tag.Contains("Low")
+            ? VisualStates.LowTable
+            : VisualStates.TopTable;
+        _whereIsThisCreature.SetTableSortingOrder();
 
         transform.localPosition = Vector3.zero;
-        _spriteRenderer.enabled  = false;
-        _lineRenderer.enabled    = false;
+        _spriteRenderer.enabled   = false;
+        _lineRenderer.enabled     = false;
         _triangleRenderer.enabled = false;
 
         onComplete?.Invoke();

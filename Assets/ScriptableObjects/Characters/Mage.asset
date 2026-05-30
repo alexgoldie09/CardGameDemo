@@ -23,5 +23,5 @@ MonoBehaviour:
   AvatarImage: {fileID: 21300000, guid: 65c948f4c85334f7a991235d0fe048d2, type: 3}
   AvatarBGImage: {fileID: 21300000, guid: b1b45d47fa08d41b6a8ae03f307d359c, type: 3}
   AvatarBGTint: {r: 0.08235294, g: 0, b: 0.28235295, a: 1}
-  ClassCardTint: {r: 0.23553754, g: 0.49667218, b: 0.6320754, a: 1}
+  ClassCardTint: {r: 0.35457456, g: 0.72014636, b: 0.9056604, a: 1}
   ClassRibbonsTint: {r: 0.764151, g: 0.5805844, b: 0, a: 1}

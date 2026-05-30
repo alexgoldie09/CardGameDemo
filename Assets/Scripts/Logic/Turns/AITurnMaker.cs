@@ -13,7 +13,7 @@ public class AITurnMaker: TurnMaker
     public override void OnTurnStart()
     {
         base.OnTurnStart();
-        // dispay a message that it is enemy`s turn
+        CreatureAttackVisual.AttackAnimationInProgress = false; // reset at turn start
         new ShowMessageCommand("Enemy`s Turn!", 2.0f).AddToQueue();
         p.DrawACard();
         StartCoroutine(MakeAITurn());
@@ -30,13 +30,19 @@ public class AITurnMaker: TurnMaker
     {
         bool strategyAttackFirst = Random.Range(0, 2) == 0;
 
+        yield return new WaitForSeconds(0.5f);
+
         while (MakeOneAIMove(strategyAttackFirst))
         {
+            // Wait one frame for AddToQueue to register and playingQueue to be set
             yield return null;
+            // Now wait for the queue to fully finish
+            yield return new WaitUntil(() => Command.IsQueueIdle);
+            // Small buffer for visuals to settle
+            yield return new WaitForSeconds(2f);
         }
 
         InsertDelay(1f);
-
         TurnManager.Instance.EndTurn();
     }
 
@@ -75,7 +81,7 @@ public class AITurnMaker: TurnMaker
                     if (c.CA.Targets == TargetingOptions.NoTarget)
                     {
                         p.PlayASpellFromHand(c, null);
-                        InsertDelay(1.5f);
+                        //InsertDelay(1.5f);
                         //Debug.Log("Card: " + c.ca.name + " can be played");
                         return true;
                     }
@@ -85,7 +91,7 @@ public class AITurnMaker: TurnMaker
                         if (target != null)
                         {
                             p.PlayASpellFromHand(c, target);
-                            InsertDelay(1.5f);
+                            //InsertDelay(1.5f);
                             return true;
                         }
                     }
@@ -94,7 +100,7 @@ public class AITurnMaker: TurnMaker
                 {
                     // it is a creature card
                     p.PlayACreatureFromHand(c, 0);
-                    InsertDelay(1.5f);
+                    //InsertDelay(1.5f);
                     return true;
                 }
 
@@ -112,11 +118,11 @@ public class AITurnMaker: TurnMaker
     /// <returns></returns>
     private bool UseHeroPower()
     {
-        if (p.ManaLeft >= 2 && !p.UsedHeroPowerThisTurn)
+        if (p.ManaLeft >= p.CharAsset.HeroPowerManaCost && !p.UsedHeroPowerThisTurn)
         {
             // use HP
             p.UseHeroPower();
-            InsertDelay(1.5f);
+            //InsertDelay(1.5f);
             //Debug.Log("AI used hero power");
             return true;
         }
@@ -145,7 +151,7 @@ public class AITurnMaker: TurnMaker
                 else
                     cl.GoFace();
                 
-                InsertDelay(1f);
+                //InsertDelay(1f);
                 //Debug.Log("AI attacked with creature");
                 return true;
             }

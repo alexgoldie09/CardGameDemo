@@ -2,25 +2,13 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Command
+// Command.cs - make it abstract so no silent empty execution is possible
+public abstract class Command
 {
-    /// <summary>
-    /// The Command pattern is used to queue up actions that need to be executed in a specific order, with specific timing.
-    /// </summary>
     public static Queue<Command> CommandQueue = new Queue<Command>();
-    
-    /// <summary>
-    /// This bool is used to prevent multiple commands from being executed at the same time.
-    /// It is set to true when a command is being executed, and set to false when the command is complete.
-    /// When a command is added to the queue, if this bool is false, the command will be executed immediately.
-    /// If this bool is true, the command will be added to the queue and will be executed when the current command is complete.
-    /// </summary>
     public static bool playingQueue = false;
+    public static bool IsQueueIdle => !playingQueue && CommandQueue.Count == 0;
 
-    /// <summary>
-    /// This method is called to add a command to the queue.
-    /// It will check if the queue is currently being played, and if not, it will start playing the queue immediately.
-    /// </summary>
     public virtual void AddToQueue()
     {
         CommandQueue.Enqueue(this);
@@ -28,19 +16,13 @@ public class Command
             PlayFirstCommandFromQueue();
     }
 
-    public virtual void StartCommandExecution()
-    {
-        // list of everything that we have to do with this command (draw a card, play a card, play spell effect, etc...)
-        // there are 2 options of timing : 
-        // 1) use tween sequences and call CommandExecutionComplete in OnComplete()
-        // 2) use coroutines (IEnumerator) and WaitFor... to introduce delays, call CommandExecutionComplete() in the end of coroutine
-    }
+    // Change from virtual to abstract - forces all subclasses to implement it
+    // and means no silent empty base method can be called accidentally
+    public abstract void StartCommandExecution();
 
-    /// <summary>
-    /// This method is called when a command has finished executing.
-    /// </summary>
     public static void CommandExecutionComplete()
     {
+        //Debug.Log($"[Command] ExecutionComplete - queue count:{CommandQueue.Count}");
         if (CommandQueue.Count > 0)
             PlayFirstCommandFromQueue();
         else
@@ -49,19 +31,24 @@ public class Command
             TurnManager.Instance.WhoseTurn.HighlightPlayableCards();
     }
 
-    /// <summary>
-    /// This method is called to start executing the first command in the queue.
-    /// </summary>
     public static void PlayFirstCommandFromQueue()
     {
         playingQueue = true;
-        CommandQueue.Dequeue().StartCommandExecution();
+        var next = CommandQueue.Peek();
+        //Debug.Log($"[Command] Playing next command: {next.GetType().Name}");
+        
+        try
+        {
+            CommandQueue.Dequeue().StartCommandExecution();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"[Command] Exception in StartCommandExecution for {next.GetType().Name}: {e}");
+            // Don't leave the queue stuck - advance it
+            CommandExecutionComplete();
+        }
     }
 
-    /// <summary>
-    /// This method checks if there is a DrawACardCommand in the queue, which indicates that a card draw is pending.
-    /// </summary>
-    /// <returns></returns>
     public static bool CardDrawPending()
     {
         foreach (var c in CommandQueue)

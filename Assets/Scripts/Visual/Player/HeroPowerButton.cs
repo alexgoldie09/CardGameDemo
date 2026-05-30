@@ -52,7 +52,6 @@ public class HeroPowerButton : MonoBehaviour, IClickable
         if (!WasUsedThisTurn && Highlighted)
         {
             GlobalSettings.Instance.Players[owner].UseHeroPower();
-            WasUsedThisTurn = true;
         }
     }
 }

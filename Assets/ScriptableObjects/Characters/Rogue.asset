@@ -15,6 +15,7 @@ MonoBehaviour:
   Class: 0
   ClassName: Rogue
   MaxHealth: 30
+  HeroPowerManaCost: 2
   HeroPowerName: HeroPower2Face
   HeroPowerIconImage: {fileID: -415446080585258355, guid: 55825c3f8c1e14503a13117c85f19072, type: 3}
   HeroPowerBGImage: {fileID: 0}
@@ -22,5 +23,5 @@ MonoBehaviour:
   AvatarImage: {fileID: 21300000, guid: 525f414a995504da589491074b101e98, type: 3}
   AvatarBGImage: {fileID: 21300000, guid: d4f74c34fd5ca4096a66e40a4d5a7d1f, type: 3}
   AvatarBGTint: {r: 0.08235294, g: 0, b: 0.28235295, a: 1}
-  ClassCardTint: {r: 0.3206264, g: 0.5754717, b: 0.21987364, a: 1}
+  ClassCardTint: {r: 0.55469656, g: 0.9811321, b: 0.38412246, a: 1}
   ClassRibbonsTint: {r: 0.7075472, g: 0.677471, b: 0.19023673, a: 1}

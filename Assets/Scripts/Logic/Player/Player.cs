@@ -294,9 +294,16 @@ public class Player : MonoBehaviour, ICharacter
     /// </summary>
     public void UseHeroPower()
     {
+        if(ManaLeft < charAsset.HeroPowerManaCost)
+        {
+            Debug.LogWarning("Not enough mana to use hero power.");
+            return;
+        }
+        
         ManaLeft -= charAsset.HeroPowerManaCost;
         usedHeroPowerThisTurn = true;
         HeroPowerEffect.ActivateEffect();
+        PArea.HeroPower.WasUsedThisTurn = true;
     }
     #endregion
 

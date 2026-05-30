@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 
 public class SceneReloader: MonoBehaviour {
@@ -14,5 +15,16 @@ public class SceneReloader: MonoBehaviour {
         Command.CommandQueue.Clear();
         Command.CommandExecutionComplete();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        // Stop play mode when running in Unity Editor
+        EditorApplication.isPlaying = false;
+#else
+        // Quit application in builds
+        Application.Quit();
+#endif
     }
 }
